@@ -13,14 +13,16 @@ package pizzashop;
  * Freeman, E.Freeman, E., Sierra, K., & Bates, B. (2004). Head First Design patterns. Sebastopol, CA: O'Reilly.
  * @author dancye
  */
-class PizzaFactory 
+class PizzaFactory extends PizzaFactoryAbstractLayer 
 {
     /**
      * returns a concrete pizza object
      * @param type the type of pizza to return
      * @return 
      */
-    public Pizza createPizza(String type)
+    
+   @Override
+    public Pizza createPizza(String type) {
     {
         Pizza pizza = null;
         if(type.equals("cheese"))
@@ -32,5 +34,6 @@ class PizzaFactory
                 pizza = new PepperoniPizza();
         }
         return pizza;
+    }
     }
 }

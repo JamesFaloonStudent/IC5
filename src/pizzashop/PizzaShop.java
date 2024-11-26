@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 public class PizzaShop {
 
-   public static PizzaCutter pizzaCutter = new PizzaCutter();//we only ever want one 
+   public static PizzaCutter pizzaCutter = PizzaCutter.getInstance();//we only ever want one 
    // of these. The pizza shop takes consistency very seriously
    //and all pizzas must be cut by the same cutter.
     public static void main(String[] args) 
@@ -27,7 +27,7 @@ public class PizzaShop {
         System.out.println("What kind of pizza do you want?");
         System.out.println("Please enter exactly cheese or pepperoni");
         String type = sc.nextLine();
-        PizzaFactory pf = new PizzaFactory();
+        PizzaFactoryAbstractLayer pf = new PizzaFactory();
         Pizza pizza = pf.createPizza(type);
         System.out.println("how many slices would you like?");
         int numSlices = sc.nextInt();
